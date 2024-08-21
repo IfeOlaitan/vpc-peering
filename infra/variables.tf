@@ -3,6 +3,21 @@ variable "region" {
   type        = string
 }
 
+variable "ami_id" {
+  description = "AMI id for EC2"
+  type        = string
+}
+
+variable "instance_type" {
+  description = "Instance type for EC2"
+  type        = string
+}
+
+variable "key_pair" {
+  description = "Key pair for EC2"
+  type        = string
+}
+
 # prod
 variable "prod_cidr_block" {
   description = "CIDR block for the production VPC"
@@ -58,5 +73,21 @@ variable "dev_vpc_name" {
 
 variable "dev_public_rt" {
   description = "Name for the development public route table"
+  type        = string
+}
+
+variable "dev_private_rt" {
+  description = "Name for the development private route table"
+  type        = string
+}
+
+variable "dev_igw" {
+  description = "Name for the development internet gateway"
+  type        = string
+}
+
+
+variable "dev_sg_name" {
+  description = "Name for the development security group"
   type        = string
 }

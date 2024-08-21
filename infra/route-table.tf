@@ -32,3 +32,26 @@ resource "aws_route_table" "prod_private" {
     Name = var.prod_private_rt
   }
 }
+
+
+# dev route tables
+resource "aws_route_table" "dev_public" {
+  vpc_id = aws_vpc.dev.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.dev_gw.id
+  }
+
+  tags = {
+    Name = var.dev_public_rt
+  }
+}
+
+resource "aws_route_table" "dev_private" {
+  vpc_id = aws_vpc.dev.id
+
+  tags = {
+    Name = var.dev_private_rt
+  }
+}

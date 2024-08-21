@@ -48,3 +48,25 @@ resource "aws_subnet" "prod_db" {
     Name = "prod-db"
   }
 }
+
+
+# dev subnets
+resource "aws_subnet" "dev_web" {
+  vpc_id                  = aws_vpc.prod.id
+  cidr_block              = "10.0.1.0/24"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "dev-web"
+  }
+}
+
+resource "aws_subnet" "dev_db" {
+  vpc_id                  = aws_vpc.prod.id
+  cidr_block              = "10.0.2.0/24"
+  map_public_ip_on_launch = false
+
+  tags = {
+    Name = "dev-db"
+  }
+}
