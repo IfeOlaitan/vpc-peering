@@ -26,7 +26,7 @@ resource "aws_security_group" "prod_sg" {
     description = "Allow all outbound traffic"
     from_port   = 0
     to_port     = 0
-    protocol    = "-1"  # -1 means all protocols
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -64,7 +64,7 @@ resource "aws_security_group" "dev_sg" {
     description = "Allow all outbound traffic"
     from_port   = 0
     to_port     = 0
-    protocol    = "-1"  # -1 means all protocols
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
