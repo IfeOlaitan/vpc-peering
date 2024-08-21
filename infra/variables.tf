@@ -33,3 +33,30 @@ variable "prod_igw" {
   description = "Name for the production internet gateway"
   type        = string
 }
+
+variable "prod_nat" {
+  description = "Name for the production nat gateway"
+  type        = string
+}
+
+variable "prod_sg_name" {
+  description = "Name for the production security group"
+  type        = string
+}
+
+
+# dev
+variable "dev_cidr_block" {
+  description = "CIDR block for the development VPC"
+  type        = string
+}
+
+variable "dev_vpc_name" {
+  description = "Name for the development VPC"
+  type        = string
+}
+
+variable "dev_public_rt" {
+  description = "Name for the development public route table"
+  type        = string
+}
